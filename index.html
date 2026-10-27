@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FURKAN YÜCEL</title>
+<meta name="description" content="Furkan Yücel - Bilgisayar Programcısı. Kişisel sayfa, staj deneyimi ve sosyal medya hesapları.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070b14;
+    --panel:#0c1322;
+    --line:#1a2640;
+    --text:#dde3ef;
+    --muted:#8590a8;
+    --blue:#3d7be0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.8;
+    min-height:100vh;
+  }
+  a{color:inherit;text-decoration:none}
+
+  header{border-bottom:1px solid var(--line)}
+  .bar{
+    max-width:960px;margin:0 auto;padding:18px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .brand{font-weight:600;font-size:17px;letter-spacing:.12em;color:#fff}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav button{
+    background:none;border:none;color:var(--muted);
+    font:inherit;font-size:15px;
+    padding:8px 14px;cursor:pointer;
+    border-bottom:2px solid transparent;
+  }
+  nav button:hover{color:var(--text)}
+  nav button.active{color:#fff;border-bottom-color:var(--blue)}
+
+  main{max-width:960px;margin:0 auto;padding:56px 24px 90px}
+  section{display:none}
+  section.show{display:block}
+
+  h1{font-size:clamp(30px,5vw,44px);font-weight:500;line-height:1.2;margin-bottom:6px;color:#fff}
+  h2{font-size:clamp(26px,4vw,34px);font-weight:500;margin-bottom:6px;color:#fff}
+  .sub{color:var(--blue);font-size:16px;margin-bottom:28px}
+  .text{max-width:680px}
+  .text p{margin-bottom:20px;color:#c4ccdc}
+  .info{margin:0 0 30px;color:var(--muted);font-size:15px}
+  .info div{margin-bottom:2px}
+  .info span{color:var(--text)}
+
+  .intern{
+    border-left:3px solid var(--blue);
+    background:var(--panel);
+    padding:22px 26px;margin-bottom:32px;max-width:680px;
+  }
+  .intern small{color:var(--muted);font-size:13px}
+  .intern h3{font-size:18px;font-weight:600;line-height:1.5;margin:6px 0 6px;color:#fff}
+  .intern .dur{color:var(--muted);font-size:15px}
+
+  .gal-title{font-size:18px;font-weight:500;margin:34px 0 16px;color:#fff}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  figure{border:1px solid var(--line);background:var(--panel);cursor:pointer}
+  figure:hover{border-color:var(--blue)}
+  .ph{position:relative;aspect-ratio:4/3;background:#090f1c}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .empty{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    color:#4b5b80;font-size:14px;text-align:center;padding:10px;
+  }
+  .empty code{font-size:13px;color:#667aa8}
+  figcaption{padding:12px 16px;font-size:14px;color:#aeb8cf}
+  figcaption b{display:block;color:#fff;font-weight:500;font-size:15px}
+
+  .group{margin-bottom:30px}
+  .group h3{font-size:14px;font-weight:500;color:var(--muted);margin-bottom:10px}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .link{
+    display:flex;align-items:center;gap:12px;
+    background:var(--panel);border:1px solid var(--line);
+    padding:12px 22px;min-width:190px;font-size:16px;
+  }
+  .link:hover{border-color:var(--blue)}
+  .link svg{width:20px;height:20px;fill:var(--blue);flex:none}
+
+  #lb{
+    position:fixed;inset:0;z-index:100;background:rgba(3,5,10,.93);
+    display:none;align-items:center;justify-content:center;padding:24px;cursor:pointer;
+  }
+  #lb.on{display:flex}
+  #lb img{max-width:100%;max-height:100%}
+
+  footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:14px;padding:22px}
+  @media(max-width:620px){
+    .bar{justify-content:center}
+    .link{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="brand">FURKAN YÜCEL</div>
+    <nav id="nav">
+      <button data-t="hakkimda" class="active">Hakkımda</button>
+      <button data-t="staj">Staj</button>
+      <button data-t="hedefler">Hedeflerim</button>
+      <button data-t="sosyal">Sosyal Medya</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="hakkimda" class="show">
+    <h1>Furkan Yücel</h1>
+    <div class="sub">Bilgisayar Programcısı</div>
+
+    <div class="info">
+      <div>Doğum tarihi: <span>13 Ağustos 2004</span></div>
+      <div>Üniversite: <span>Afyon Kocatepe Üniversitesi</span></div>
+      <div>Bölüm: <span>Bilgisayar Programcılığı</span></div>
+    </div>
+
+    <div class="text">
+      <p>
+        Merhaba, ben Furkan Yücel. Afyon Kocatepe Üniversitesi'nde Bilgisayar Programcılığı
+        eğitimi aldım. Eğitim hayatım boyunca yazılıma duyduğum ilgiyi geliştirdim ve fikirleri
+        çalışan, kullanışlı projelere dönüştürmeyi kendime iş edindim.
+      </p>
+      <p>
+        Boş zamanlarımın büyük bölümünü bilgisayar başında geçiriyorum. Yeni teknolojileri denemek,
+        iç açıcı ve göze hoş gelen projeler geliştirmek bana büyük keyif veriyor. Bunun yanında video
+        oyunları oynamayı, film izlemeyi ve iyi bir yapımı baştan sona keyifle takip etmeyi seviyorum.
+      </p>
+      <p>
+        Gezmek ve yeni yerler görmek de hayatımda önemli bir yer tutuyor. Gittiğim yerlerde
+        yaşadıklarımı unutmamak için anı biriktirmeyi ve bu anların fotoğrafını çekmeyi alışkanlık
+        haline getirdim. Küçük yaşlardan beri gönülden bir Fenerbahçe taraftarıyım.
+      </p>
+    </div>
+  </section>
+
+  <section id="staj">
+    <h2>Staj</h2>
+    <div class="sub">Uygulamalı eğitim</div>
+
+    <div class="intern">
+      <small>Staj yeri</small>
+      <h3>KARAYOLLARI GENEL MÜDÜRLÜĞÜ<br>SİVAS BİLGİ TEKNOLOJİLERİ BİRİMİ</h3>
+      <div class="dur">Süre: 30 gün</div>
+    </div>
+
+    <div class="text">
+      <p>
+        Eğitimimin uygulamalı bölümünü Karayolları Genel Müdürlüğü Sivas Bilgi Teknolojileri
+        Birimi'nde, toplam 30 gün süren bir staj ile tamamladım. Bu süre boyunca okulda öğrendiğim
+        bilgileri kurumsal bir ortamda uygulama ve bilgi teknolojileri biriminin günlük işleyişini
+        yakından görme fırsatı buldum.
+      </p>
+    </div>
+
+    <div class="gal-title">Staj çalışmalarımdan fotoğraflar</div>
+    <div class="gallery">
+
+      <figure>
+        <div class="ph">
+          <img src="foto/staj-1.jpg" alt="Staj fotoğrafı 1" onerror="this.remove()">
+          <div class="empty">Fotoğraf ekle<code>foto/staj-1.jpg</code></div>
+        </div>
+        <figcaption><b>Raspberry-1</b>Raspberry sistem ve yazılım kurulumu.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="ph">
+          <img src="foto/staj-2.jpg" alt="Staj fotoğrafı 2" onerror="this.remove()">
+          <div class="empty">Fotoğraf ekle<code>foto/staj-2.jpg</code></div>
+        </div>
+        <figcaption><b>Raspberry-2</b>Raspberry montaj.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="ph">
+          <img src="foto/staj-3.jpg" alt="Staj fotoğrafı 3" onerror="this.remove()">
+          <div class="empty">Fotoğraf ekle<code>foto/staj-3.jpg</code></div>
+        </div>
+        <figcaption><b>Teknik Destek</b>Sistem onarım-teknik destek.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="ph">
+          <img src="foto/staj-4.jpg" alt="Staj fotoğrafı 4" onerror="this.remove()">
+          <div class="empty">Fotoğraf ekle<code>foto/staj-4.jpg</code></div>
+        </div>
+        <figcaption><b>Bakım-Onarım</b>Sistem bakım ve temizlik.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="ph">
+          <img src="foto/staj-5.jpg" alt="Staj fotoğrafı 5" onerror="this.remove()">
+          <div class="empty">Fotoğraf ekle<code>foto/staj-5.jpg</code></div>
+        </div>
+        <figcaption><b>Sistem Toplama</b>Sistem toplama-montaj.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="ph">
+          <img src="foto/staj-6.jpg" alt="Staj fotoğrafı 6" onerror="this.remove()">
+          <div class="empty">Fotoğraf ekle<code>foto/staj-6.jpg</code></div>
+        </div>
+        <figcaption><b>Yazılım Kurulumu</b>Sunucu üzerinden şirket yazılımları kurulumu.</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section id="hedefler">
+    <h2>Hedeflerim</h2>
+    <div class="sub">Yazılım ve otomasyon</div>
+    <div class="text">
+      <p>
+        En büyük hedefim, bir yazılım şirketinde çalışarak profesyonel iş hayatında tecrübe kazanmak
+        ve bu alanda kendimi sürekli geliştirmektir. Büyük ekiplerle çalışmanın, gerçek ihtiyaçlara
+        yönelik ürünler üretmenin bana çok şey katacağına inanıyorum.
+      </p>
+      <p>
+        Bir diğer hedefim ise otomasyon sektörüne girerek firmalara ve esnaflara özel yazılım
+        çözümleri hazırlamaktır. Her işletmenin ihtiyacı farklıdır; bu nedenle hazır çözümler yerine,
+        işletmenin çalışma düzenine uygun, ona özel yazılımlar kurmak istiyorum.
+      </p>
+      <p>
+        Yazılım geliştirmenin yalnızca kurulumdan ibaret olmadığının bilincindeyim. Geliştirdiğim
+        yazılımların bakımını ve güncellemelerini düzenli olarak yaparak müşterilerimle uzun vadeli
+        ve güvene dayalı bir iş birliği kurmayı amaçlıyorum.
+      </p>
+    </div>
+  </section>
+
+  <section id="sosyal">
+    <h2>Sosyal Medya</h2>
+    <div class="sub">Bana buralardan ulaşabilirsiniz</div>
+
+    <div class="group">
+      <h3>Geliştirici</h3>
+      <div class="links">
+        <a class="link" href="https://github.com/bipolarfurky" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Sosyal</h3>
+      <div class="links">
+        <a class="link" href="https://instagram.com/furkywesker" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>İletişim</h3>
+      <div class="links">
+        <a class="link" href="https://t.me/f4rknycel" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M21.9 3.6 2.7 11c-1.3.5-1.3 1.2-.2 1.5l4.9 1.5 1.9 5.8c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.7-.8l3.2-15.1c.3-1.3-.5-1.9-1.3-1.9zM8.5 13.7l9.9-6.2c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4-2-4.7z"/></svg>
+          Telegram
+        </a>
+        <a class="link" href="https://discord.com/users/214411775708233729" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18 18 0 0 0-4.4 0L10.6 3a19.8 19.8 0 0 0-4.9 1.4C2.6 9 1.8 13.5 2.2 18a19.9 19.9 0 0 0 6 3l1.3-2.1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.9 19.9 0 0 0 6-3c.5-5.2-.8-9.7-3.5-13.6zM8.7 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4zm6.6 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4z"/></svg>
+          Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© <span id="yil"></span> Furkan Yücel</footer>
+
+<div id="lb"><img alt=""></div>
+
+<script>
+  document.getElementById('yil').textContent = new Date().getFullYear();
+
+  var buttons = document.querySelectorAll('#nav button');
+  var sections = document.querySelectorAll('section');
+  function openTab(id){
+    sections.forEach(function(s){ s.classList.toggle('show', s.id === id); });
+    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.t === id); });
+    history.replaceState(null, '', '#' + id);
+    window.scrollTo(0, 0);
+  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ openTab(b.dataset.t); }); });
+  var h = location.hash.slice(1);
+  if (h && document.getElementById(h)) openTab(h);
+
+  var lb = document.getElementById('lb'), lbi = lb.querySelector('img');
+  document.querySelectorAll('figure').forEach(function(f){
+    f.addEventListener('click', function(){
+      var img = f.querySelector('img');
+      if (!img) return;
+      lbi.src = img.src; lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('on'); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('on'); });
+</script>
+</body>
+</html>
